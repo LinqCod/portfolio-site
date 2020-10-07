@@ -1,7 +1,8 @@
 <?php
 
 #Receive user input
-$email_address = $_POST['email_address'];
+$name = $_POST['fio'];
+$email_address = $_POST['email'];
 $feedback = $_POST['feedback'];
 
 #Filter user input
@@ -12,8 +13,8 @@ return preg_replace('/[nr|!/<>^$%*&]+/','',$form_field);
 $email_address  = filter_email_header($email_address);
 
 #Send email
-$headers = "From: $email_addressn";
-$sent = mail('danny12123@yandex.ru', 'Feedback Form Submission', $feedback, $headers);
+$headers = "From: $email_address";
+$sent = mail('danny12123@yandex.ru', 'Feedback Form Submission', $feedback, $headers, $name);
 
 #Thank user or notify them of a problem
 if ($sent) {
