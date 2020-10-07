@@ -82,15 +82,11 @@ $(document).ready(function(){
 
 
     function Circle(el){
-            $(el).circleProgress({fill: {color:'#ff5c5c'}})
+            $(el).circleProgress({fill: {color:'#000'}})
             .on('circle-animation-progress', function(event, progress, stepValue){
                 $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2)+"%");
             });
         };
         Circle('.round');
-    
-    
-
-
 });
 });

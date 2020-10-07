@@ -41,11 +41,6 @@
 .wrap-row{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-content: center;
-}
-
-.row{  
 }
 
 .works-container {
@@ -239,13 +234,17 @@ h2 {
 }
 
 /*circle*/
-#cirleBar{
-    margin-top: 180px;
+.wrap-row{
     text-align: center;
     font-family: tahoma;
 
+} 
+
+#circleBar {
+    margin-top: 140px;
 }
-#circleBar .round{
+
+.wrap-row .round {
     min-height: 255px;
     margin-top: 30px;
     position: relative;
@@ -253,7 +252,7 @@ h2 {
 
 }
 
-#circleBar .round strong{
+.wrap-row .round strong{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -262,21 +261,21 @@ h2 {
     font-size: 40px;
     color: #212121;
     font-weight: 100;
-
 }
 
-#circleBar span{
+.wrap-row span {
     display: block;
     color:#999;
     font-size: 17px;
     margin-top: 10px;
 }
 
-#circleBar span i{
+.wrap-row span i {
     color:#ff5c5c;
     font-size: 22px;
     margin-right: 7px;
 }
+
 
 .lower-header {
     display: flex;
