@@ -31,6 +31,12 @@
     background-color: #F1F0F0;
 }
 
+.contact-container {
+    height: 100vh;
+    display: grid;
+    background-color: #F1F0F0;
+    grid-template-rows: 1fr 1fr;
+}
 
 .container{
     height: 100vh;
@@ -47,7 +53,6 @@
     height: 140vh;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    background-color: #CABDBD;
 }
 
 #skills {
@@ -69,6 +74,19 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lora:400,700i');
+
+.contact-form{
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    justify-content: center;
+    align-content: center;
+}
+    
+#inp{
+    margin: 15px;
+    padding: 5px 10px;
+    box-shadow: 5px 5px 2px rgba(72, 72, 72, 0.1);
+}
 
 .circular-progress-bar {
     position: relative;
