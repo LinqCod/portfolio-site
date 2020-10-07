@@ -1,46 +1,198 @@
-<?php
-
-#Receive user input
-$name = $_POST['fio'];
-$email_address = $_POST['email'];
-$feedback = $_POST['feedback'];
-
-#Filter user input
-function filter_email_header($form_field) {  
-return preg_replace('/[nr|!/<>^$%*&]+/','',$form_field);
-}
-
-$email_address  = filter_email_header($email_address);
-
-#Send email
-$headers = "From: $email_address";
-$sent = mail('danny12123@yandex.ru', 'Feedback Form Submission', $feedback, $headers, $name);
-
-#Thank user or notify them of a problem
-if ($sent) {
-
-?><html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Thank You</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biba and boba</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="plugin.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
-<h1>Thank You</h1>
-<p>Thank you for your feedback.</p>
+    <header>
+        <div id="home"></div>
+        <div class="upper-header container">
+            <div></div>
+            <div id="description-container">
+                <p class="subtitle">Hello, this is our portfolio</p>
+                <h1 id="title">FULL STACK WEB DEVELOPERS</h1>
+                <p class="subtitle">creating modern and responsive Web Application</p>
+            </div>
+            <button id="from-home-btn">
+                <a href="#texts">
+                <img src="./imgs/btn_arrow.png" alt="">
+                </a>
+            </button>
+        </div>
+    </header>
+    <div class="lower-header container">
+        <div id="logo">BIBA & BOBA</div>
+        <div id="header-menu">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#service">SERVICES</a></li>
+                <li><a href="#work">WORKS</a></li>
+                <li><a href="#circle">SKILLS</a></li>
+                <li><a href="#">TESTIMONIALS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="service" class="services-container">
+        <div id="texts">
+            <h2>THIS IS WHAT I DO</h2>
+            <hr>
+            <p>No one lights a lamp in order to hide it behind the door: 
+                the purpose of light is to create more light, 
+                to open people’s eyes, to reveal the marvels around.
+            </p>
+        </div>
+        <div id="skills">
+            <div class="skill">
+                <img src="./imgs/design_icon.png" alt="">
+                <h3>WEB DESIGN</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="skill">
+                <img src="./imgs/coding_icon.png" alt="">
+                <h3>WEB PROGRAMMING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="skill">
+                <img src="./imgs/mobile_icon.png" alt="">
+                <h3>MOBILE PROGRAMMING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="skill">
+                <img src="./imgs/testing_icon.png" alt="">
+                <h3>TESTING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+        </div>
+    </div>
+    <div id="work" class="works-container">
+        <div id="texts">
+            <h2>THIS IS WHAT I DO</h2>
+            <hr>
+            <p>No one lights a lamp in order to hide it behind the door: 
+                the purpose of light is to create more light, 
+                to open people’s eyes, to reveal the marvels around.
+            </p>
+        </div>
+        <div id="works">
+            <div class="work">
+                <img src="./imgs/design_icon.png" alt="">
+                <h3>WEB DESIGN</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="work">
+                <img src="./imgs/coding_icon.png" alt="">
+                <h3>WEB PROGRAMMING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="work">
+                <img src="./imgs/mobile_icon.png" alt="">
+                <h3>MOBILE PROGRAMMING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="work">
+                <img src="./imgs/testing_icon.png" alt="">
+                <h3>TESTING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="work">
+                <img src="./imgs/testing_icon.png" alt="">
+                <h3>TESTING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+            <div class="work">
+                <img src="./imgs/testing_icon.png" alt="">
+                <h3>TESTING</h3>
+                <p>Good things come to those who wait, but only the things left by those who hustle</p>
+            </div>
+        </div>
+    </div>
+    <section id="circleBar">
+        <div class="container">
+            <div id="texts">
+                <h2>THIS IS MY SKIILS</h2>
+                <hr>
+                <p>No one lights a lamp in order to hide it behind the door: 
+                the purpose of light is to create more light, 
+                to open people’s eyes, to reveal the marvels around.
+                </p>
+            </div>
+            <div class="wrap-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="round" data-value="0.95" data-size="200" data-thickness="12">
+                            <strong></strong>
+                            <span>
+                                <i class="fa fa-html5"></i>
+                                HTML SKILLS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="round" data-value="0.80" data-size="200" data-thickness="12">
+                            <strong></strong>
+                            <span>
+                                <i class="fa fa-html5"></i>
+                                JS SKILLS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="round" data-value="0.82" data-size="200" data-thickness="12">
+                            <strong></strong>
+                            <span>
+                                <i class="fa fa-html5"></i>
+                                CSS SKILLS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="round" data-value="0.75" data-size="200" data-thickness="12">
+                            <strong></strong>
+                            <span>
+                                <i class="fa fa-html5"></i>
+                                ANDROID SKILLS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="contact-container">
+        <div id="texts">
+            <h2>THIS IS MY SKIILS</h2>
+            <hr>
+            <p>No one lights a lamp in order to hide it behind the door: 
+            the purpose of light is to create more light, 
+            to open people’s eyes, to reveal the marvels around.
+            </p>
+        </div>
+
+        <form class="contact-form" action="/feedback_form.php" method="post">
+            <input id="inp" type="text" name="fio" placeholder="Enter name">
+            <input id="inp" type="text" name="email" placeholder="Enter e-mail">
+             <textarea id="inp" name="feedback" id="" cols="100" rows="15" placeholder="Message"></textarea>
+            <input id="inp" class="SendButton" type="submit" value="Send">
+        </form>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js"></script>
 </body>
 </html>
-<?php
-
-} else {
-
-?><html>
-<head>
-<title>Something went wrong</title>
-</head>
-<body>
-<h1>Something went wrong</h1>
-<p>We could not send your feedback. Please try again.</p>
-</body>
-</html>
-<?php
-}
-?>
